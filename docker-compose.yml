@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: system/server/Dockerfile
+      args:
+        NODE_VERSION: 14
+    volumes:
+      - ./:/app
+      - ./system/server/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    labels:
+      traefik.enable: true
+      traefik.http.routers.flags.rule: Host(`flags.anagraph.org`)
+# Uncomment below to earn web access to the project without Traefik
+#    ports:
+#      - 3000:3000
+#      - 443:443
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+# Uncomment below to link with Traefik
+#networks:
+#  default:
+#    external: true
+#    name: proxy
