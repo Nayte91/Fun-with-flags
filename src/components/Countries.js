@@ -61,7 +61,7 @@ const Countries = () => {
                 </ul>
             </div>
 
-            <ul className="countries-list">
+            <ul id="countries-list">
                 {
                     sortedData
                     .filter((country) =>

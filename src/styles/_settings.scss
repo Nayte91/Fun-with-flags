@@ -12,6 +12,7 @@ $color-4: rgb(32, 35, 42);
   margin: 0;
   padding: 0;
 }
+
 body {
   margin: 0.4rem auto;
   max-width: 1296px;
@@ -19,14 +20,17 @@ body {
   color: $color-3;
   background-color: $color-2;
 }
+
 li {
   list-style-type: none;
 }
+
 a {
   text-decoration: none;
   color: $color-3;
   cursor: pointer;
 }
+
 a:visited {
   color: $color-3;
 }
