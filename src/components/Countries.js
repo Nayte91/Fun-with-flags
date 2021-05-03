@@ -31,7 +31,7 @@ const Countries = () => {
         }
 
         sortedCountry();
-    }, [data, rangeValue]);
+    }, [data, rangeValue, playOnce]);
 
     return (
         <div id="countries">
