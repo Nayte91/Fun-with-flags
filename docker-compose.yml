@@ -8,7 +8,6 @@ services:
       args:
         NODE_VERSION: 14
     volumes:
-      - ./:/app
       - ./system/server/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
@@ -17,8 +16,7 @@ services:
       traefik.http.routers.flags.rule: Host(`flags.anagraph.org`)
 # Uncomment below to earn web access to the project without Traefik
 #    ports:
-#      - 3000:3000
-#      - 443:443
+#      - 80:80
 
 volumes:
   caddy_data:
@@ -27,5 +25,5 @@ volumes:
 # Uncomment below to link with Traefik
 #networks:
 #  default:
-#    external: true
-#    name: proxy
+#    external:
+#      name: proxy
